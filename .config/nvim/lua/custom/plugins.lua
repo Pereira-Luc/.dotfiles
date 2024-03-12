@@ -2,15 +2,32 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
-
+  {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.3',
+    lazy=false,
+    config = function()
+        require('distant'):setup()
+    end
+  },
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "susliko/tla.nvim",
+    lazy = false,
+    init = function (_)
+      require("plenary")
+    end,
+  },
 -- lazy.nvim
   {
     "lervag/vimtex",
     lazy = false,
     init = function()
       -- Use init for configuration, don't use the more common "config".
-      --vim.g['vimtex_view_method'] = 'zathura'
-      vim.g['vimtex_view_method'] = 'zathura_simple'
+      vim.g['vimtex_view_method'] = 'skim'
+      --vim.g['vimtex_view_method'] = 'zathura_simple'
       vim.g['vimtex_quickfix_mode'] = 0
       vim.g['vimtex_mappings_enabled'] = 0
       vim.g['vimtex_indent_enabled'] = 0             -- Auto Indent
