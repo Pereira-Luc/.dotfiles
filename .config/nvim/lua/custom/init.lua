@@ -6,4 +6,5 @@
 --   command = "tabdo wincmd =",
 -- })
 --
-
+vim.opt.spelllang = "en_gb"
+vim.opt.spell = true

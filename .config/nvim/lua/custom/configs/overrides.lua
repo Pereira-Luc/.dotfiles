@@ -46,6 +46,9 @@ M.mason = {
 
     -- python stuff
     "pyright",
+
+    -- java stuff
+    "jdtls",
   },
 }
 
@@ -64,5 +67,7 @@ M.nvimtree = {
     },
   },
 }
+
+
 
 return M
